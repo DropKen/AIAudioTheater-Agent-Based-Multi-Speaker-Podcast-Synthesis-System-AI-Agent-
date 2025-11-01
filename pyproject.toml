@@ -68,9 +68,6 @@ webui = [
   "gradio==5.45.0",
 ]
 # To install the DeepSpeed support, use `uv sync --extra deepspeed` (or `--all-extras`).
-deepspeed = [
-  "deepspeed==0.17.1",
-]
 
 [project.urls]
 Homepage = "https://github.com/index-tts/index-tts"
@@ -92,7 +89,7 @@ build-backend = "hatchling.build"
 # and finds our CUDA-enabled version of PyTorch, which DeepSpeed *needs* during
 # its compilation to determine what GPU support to compile for itself. It also
 # saves time, since it won't waste time downloading a generic PyTorch version.
-no-build-isolation-package = ["deepspeed"]
+# no-build-isolation-package = ["deepspeed"]
 
 [tool.uv.sources]
 # Install PyTorch with CUDA support on Linux/Windows (CUDA doesn't exist for Mac).
@@ -112,6 +109,6 @@ torchvision = [
 name = "pytorch-cuda"
 # Use PyTorch built for NVIDIA Toolkit version 12.8.
 # Available versions: https://pytorch.org/get-started/locally/
-url = "https://download.pytorch.org/whl/cu128"
+url = "https://download.pytorch.org/whl/cu126"
 # Only use this index when explicitly requested by `tool.uv.sources`.
 explicit = true
